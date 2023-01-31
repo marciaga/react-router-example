@@ -4,6 +4,7 @@ import { capitalizeWord } from "../utils";
 
 const Cat = () => {
   const { catName } = useParams();
+
   const [cats] = useOutletContext();
 
   const cat = cats.find((cat) => cat.name === capitalizeWord(catName));

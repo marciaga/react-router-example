@@ -5,16 +5,20 @@ import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import FourOhFour from "./pages/404";
 import Cat from "./components/Cat";
+import { AuthProvider } from "./hooks/useAuth";
 
-const MainLayout = () => (
-  <Layout>
-    <Outlet />
-  </Layout>
+// Any routes here will be protected via the AuthProvider's useEffect logic
+const AuthorizedLayout = () => (
+  <AuthProvider>
+    <Layout>
+      <Outlet />
+    </Layout>
+  </AuthProvider>
 );
 
 export const routes = [
   {
-    element: <MainLayout />,
+    element: <AuthorizedLayout />,
     children: [
       {
         element: <Dashboard />,
@@ -24,7 +28,7 @@ export const routes = [
             element: <Cat />,
             path: ":catName",
           },
-        ]
+        ],
       },
       {
         element: <Login />,
@@ -35,9 +39,21 @@ export const routes = [
         element: <FourOhFour />,
       },
       {
+        path: "/",
+        element: <Navigate to="/dashboard" replace />,
+      },
+      {
         path: "*",
         element: <Navigate to="/404" replace />,
       },
     ],
+  },
+  {
+    path: "/about",
+    element: (
+      <Layout>
+        <h1>Unprotected Route</h1>
+      </Layout>
+    ),
   },
 ];

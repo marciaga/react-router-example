@@ -1,13 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import reportWebVitals from './reportWebVitals';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import reportWebVitals from "./reportWebVitals";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import { routes } from './Router';
+import { routes } from "./Router";
+
+import "./index.css";
 
 const router = createBrowserRouter(routes);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
