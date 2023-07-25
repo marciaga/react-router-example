@@ -1,10 +1,7 @@
-.navbar {
-  padding: 5px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: black;
-  height: 50px;
-  font-size: 24px;
-  color: white;
+nav > a {
+  margin: 0px 5px;
+}
+
+a.active {
+  border-bottom: 2px solid white;
 }

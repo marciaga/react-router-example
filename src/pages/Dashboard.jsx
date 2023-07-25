@@ -1,17 +1,13 @@
-import React from "react";
-
-import { Link, Outlet } from "react-router-dom";
-
-import { useAuth } from "../hooks/useAuth";
+import { Link } from "react-router-dom";
 
 import { mockCats } from "../data";
+import { useAuth } from "../hooks/useAuth";
 
 const Dashboard = () => {
-  const { user } = useAuth();
-
+  const { token } = useAuth();
   return (
-    <div>
-      <h1>Hello {user?.name}</h1>
+    <>
+      <h2>Dashboard (Protected)</h2>
       <ul>
         {mockCats.map((cat) => (
           <li key={cat.id}>
@@ -19,8 +15,8 @@ const Dashboard = () => {
           </li>
         ))}
       </ul>
-      <Outlet context={[mockCats]} />
-    </div>
+      <p>Token is: {token}</p>
+    </>
   );
 };
 

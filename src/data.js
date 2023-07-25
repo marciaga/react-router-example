@@ -1,18 +1,12 @@
 export const mockCats = [
   {
-    id: "4e1232323kjllk2342lk",
+    id: "14eelakklsjdfkjasdl",
     name: "Pepper",
-    personality: "mischievous",
+    personality: "likes mischief",
   },
   {
-    id: "9b12klj12lkjl2344",
+    id: "1a234lkjsdlkj2234k",
     name: "Tron",
-    personality: "Extra spicy",
+    personality: "extra spicy",
   },
 ];
-
-export const mockUser = {
-  email: "cat@meowington.com",
-  id: "1a1231H120912lkjsdfl",
-  name: "Cat Meowington",
-};
